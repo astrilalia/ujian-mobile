@@ -14,10 +14,19 @@ const Logout = () => {
 
     return (
         <View style={styles.container}>
-            <Button 
-                title="LOGOUT"
-                onPress={handleLogout}
-            />
+            <View>
+                <Button 
+                    title="LOGOUT"
+                    onPress={handleLogout}
+                    containerStyle={{
+                        alignItems: 'center'
+                    }}
+                    buttonStyle={{
+                        backgroundColor: '#3DDC84',
+                        width: '15%'
+                    }}
+                />
+            </View>
         </View>
     );
 };
