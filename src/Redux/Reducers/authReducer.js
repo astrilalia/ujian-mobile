@@ -1,7 +1,7 @@
 const INITIAL_STATE = {
     username: '',
     dataKucing: [],
-    listKucing: []
+    image: '',
 };
 
 export const authReducer = (state = INITIAL_STATE, action) => {
@@ -15,6 +15,11 @@ export const authReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 dataKucing: action.payload
+            }
+        case 'IMAGE':
+            return {
+                ...state,
+                image: action.payload
             }
         case 'LOGOUT':
             return {

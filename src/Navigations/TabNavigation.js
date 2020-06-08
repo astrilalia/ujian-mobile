@@ -20,10 +20,13 @@ const TabNavigation = () => {
                     return <Icon 
                         type="material"
                         name={iconName}
-                        color="#3DDC84"
+                        color={color}
                     />
                 }
             })}
+            tabBarOptions={{
+                activeTintColor: '#3DDC84'
+            }}
         >
             <Tab.Screen name="Home" component={HomeStack} />
             <Tab.Screen name="Profile" component={ProfileDrawer} />

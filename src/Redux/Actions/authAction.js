@@ -4,11 +4,16 @@ import AsyncStorage from '@react-native-community/async-storage';
 export const getData = () => {
     return async dispatch => {
         try {
-            let res = await Axios.get('https://api.thecatapi.com/v1/images/search')
-            // console.log(res.data[0])
+            let res = await Axios.get('https://api.thecatapi.com/v1/images/search?limit=10',
+                {headers:{
+                    " X-Api-Key" : "ac5aaaff-4b71-4312-980e-3bb08e833c53"
+                }}
+            )
+            
+            // console.log(res.data)
             dispatch({
                 type: 'GET_DATA',
-                payload: res.data[0]
+                payload: res.data
             })
         } catch (error) {
             
@@ -38,6 +43,19 @@ export const keepLogin = () => {
             data = JSON.parse(data)
             dispatch({
                 type: 'LOGIN',
+                payload: data
+            })
+        } catch (error) {
+            
+        }
+    }
+}
+
+export const imageAction = (data) => {
+    return async dispatch => {
+        try {
+            dispatch({
+                type: 'IMAGE',
                 payload: data
             })
         } catch (error) {

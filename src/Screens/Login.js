@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View,StyleSheet } from 'react-native';
 import { Icon, Input, Button } from 'react-native-elements';
 import { useDispatch } from 'react-redux';
 import { loginAction } from '../Redux/Actions/authAction';
